@@ -1,8 +1,10 @@
 import * as React from 'react';
 
+import { Language } from '../../constants/language';
+
 export interface FlagProps {
-  language: string;
-  onClick?: (language: string) => void;
+  language: Language;
+  onClick?: (language: Language) => void;
 }
 
 export default class Flag extends React.PureComponent<FlagProps> { 
@@ -18,7 +20,7 @@ export default class Flag extends React.PureComponent<FlagProps> {
     const { language } = this.props;
 
     return (
-      <button onClick={handleClick}>{language}</button>
+      <button onClick={handleClick}>{Language[language]}</button>
     );
   }
 }

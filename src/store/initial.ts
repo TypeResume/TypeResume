@@ -7,6 +7,9 @@ const initial: ResumeModel = {
     language: {
       language: Language.Chinese
     }
+  },
+  profile: {
+    username: 'AngryPowman'
   }
 };
 

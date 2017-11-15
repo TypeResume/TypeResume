@@ -1,16 +1,21 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 import Header from '../components/container/Header';
+import Content from '../components/container/Content';
 
-export interface ResumeProps {
-}
+const Container = styled.div`
+  width: 860px;
+  margin: 0 auto;
+`;
 
-export default class Resume extends React.PureComponent<ResumeProps> {
+export default class Resume extends React.PureComponent {
   render () {
     return (
-      <div className="resume-container">
-        <Header username="AngryPowman"/>
-      </div>
+      <Container>
+        <Header />
+        <Content />
+      </Container>
     );
   }
 }

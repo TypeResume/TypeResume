@@ -7,6 +7,7 @@ const Img = styled.img`
   width: ${props => props.width || defaultImageSize};
   height: ${props => props.height || defaultImageSize};
   border-radius: 4px;
+  vertical-align: middle;
 `;
 
 interface AvatarProps {

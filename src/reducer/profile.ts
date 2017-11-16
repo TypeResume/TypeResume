@@ -1,17 +1,21 @@
 import { handleActions, Action } from 'redux-actions';
 
-import { UsernameChanged, Profile } from '../models/profile';
+import { ProfileChanged, Profile } from '../models/profile';
 
-import { LANGUAGE_CHANGED } from '../constants/actions';
+import { PROFILE_CHANGED } from '../constants/actions';
 
-const initialState: UsernameChanged = {
-  username: ''
+const initialState: Profile = {
+  username: '',
+  avatar: '',
+  repos: 0,
+  stars: 0,
+  followers: 0,
+  orgs: 0,
+  website: ''
 };
 
-export default handleActions<Profile, UsernameChanged>({
-  [LANGUAGE_CHANGED]: (state: Profile, action: Action<UsernameChanged>) => {
-    return action.payload && {
-      username: action.payload && action.payload.username
-    } || state;
+export default handleActions<Profile, ProfileChanged>({
+  [PROFILE_CHANGED]: (state: Profile, action: Action<ProfileChanged>) => {
+    return Object.assign({}, state, action.payload);
   }
-},                                                     initialState);
+},                                                    initialState);
